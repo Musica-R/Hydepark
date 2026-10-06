@@ -7,6 +7,7 @@ import AnimatedText from "../components/AnimatedText";
 import Reveal from "../components/Reveal";
 import CTABanner from "../components/CTABanner";
 
+
 const day = [
   { icon: FaSuitcaseRolling, time: "1:00 PM", title: "Arrive and settle in", text: "Private check-in, a cool room and a bottle of water waiting." },
   { icon: FaConciergeBell, time: "Afternoon", title: "Relax or get to work", text: "Free Wi-Fi, room service and a quiet, soundproof room." },
@@ -45,7 +46,7 @@ export default function Amenities() {
       <section className="section section-alt">
         <div className="container split">
           <Reveal variant="left" className="split-media">
-            <img className="single" src={img(photos.dining, 1100)} alt="Dining at Hydepark Regency" loading="lazy" />
+            <img className="single" src="/assets/dinning.jpg" alt="Dining at Hydepark Regency" loading="lazy" />
           </Reveal>
           <div className="split-text">
             <AnimatedText text="Dining and room service" as="h2" />

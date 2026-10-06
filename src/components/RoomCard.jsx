@@ -8,9 +8,9 @@ export default function RoomCard({ room, delay = 0 }) {
     <Reveal className="room-card glass" delay={delay} variant="up">
       <div className="room-card-media">
         <img src={img(room.image, 900)} alt={room.name} loading="lazy" />
-        <span className="price-tag">
+        {/* <span className="price-tag">
           {formatPrice(room.price)}<small> / night</small>
-        </span>
+        </span> */}
       </div>
       <div className="room-card-body">
         <h3>{room.name}</h3>

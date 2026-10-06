@@ -2,11 +2,39 @@ import { FaLandmark, FaWater, FaMountain, FaTree } from "react-icons/fa";
 import { photos } from "../utils/images";
 import { FaShieldAlt, FaHeart, FaGem, FaHandshake } from "react-icons/fa";
 
+// Build an Unsplash URL from a photo id
+const unsplash = (id, w = 800) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
+
 export const explore = [
-  { icon: FaLandmark, title: "Palakkad Fort", text: "A historic fort in the heart of the city, ideal for a relaxed half-day." },
-  { icon: FaWater, title: "Malampuzha Dam", text: "Gardens and a reservoir that make a favourite family outing." },
-  { icon: FaMountain, title: "Nelliyampathy Hills", text: "Cool viewpoints and plantations for a scenic escape from the plains." },
-  { icon: FaTree, title: "Silent Valley", text: "Protected rainforest for nature lovers and wildlife enthusiasts." },
+  {
+    icon: FaLandmark,
+    title: "Palakkad Fort",
+    text: "A historic fort in the heart of the city, ideal for a relaxed half-day.",
+    image: unsplash("photo-1477587458883-47145ed94245"), // fort / stone gateway
+    link: "/contact",
+  },
+  {
+    icon: FaWater,
+    title: "Malampuzha Dam",
+    text: "Gardens and a reservoir that make a favourite family outing.",
+    image: unsplash("photo-1506744038136-46273834b3fb"), // lake and hills
+    link: "/contact",
+  },
+  {
+    icon: FaMountain,
+    title: "Nelliyampathy Hills",
+    text: "Cool viewpoints and plantations for a scenic escape from the plains.",
+    image: unsplash("photo-1464822759023-fed622ff2c3b"), // misty hills
+    link: "/contact",
+  },
+  {
+    icon: FaTree,
+    title: "Silent Valley",
+    text: "Protected rainforest for nature lovers and wildlife enthusiasts.",
+    image: unsplash("photo-1448375240586-882707db888b"), // forest
+    link: "/contact",
+  },
 ];
 
 export const values = [

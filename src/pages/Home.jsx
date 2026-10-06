@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaStar, FaCheckCircle } from "react-icons/fa";
+import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import { img, photos } from "../utils/images";
 import { site, stats } from "../data/site";
 import { rooms } from "../data/rooms";
@@ -12,7 +12,6 @@ import { reviews } from "../data/reviews";
 import AnimatedText from "../components/AnimatedText";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
-import BookingBar from "../components/BookingBar";
 import StatCounter from "../components/StatCounter";
 import RoomCard from "../components/RoomCard";
 import Testimonials from "../components/Testimonials";
@@ -27,9 +26,6 @@ export default function Home() {
         <div className="hero-bg" style={{ backgroundImage: `url(${img(photos.hero, 2200)})` }} />
         <div className="hero-shade" />
         <div className="container hero-inner">
-          <Reveal variant="down" className="hero-badge glass">
-            <FaStar /> Hotel & Convention Center · Palakkad
-          </Reveal>
           <AnimatedText text="Stay well. Celebrate beautifully." as="h1" className="hero-title" delay={150} />
           <Reveal as="p" delay={500} className="hero-sub">
             Air-conditioned rooms from ₹2,200, a 24-hour front desk and banquet halls for every occasion —
@@ -38,9 +34,6 @@ export default function Home() {
           <Reveal delay={700} className="hero-actions">
             <Link to="/rooms" className="btn btn-gold">Explore rooms <FaArrowRight /></Link>
             <Link to="/events" className="btn btn-glass">Plan an event</Link>
-          </Reveal>
-          <Reveal delay={900} variant="up" className="hero-booking">
-            <BookingBar />
           </Reveal>
         </div>
       </section>
@@ -182,22 +175,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXPLORE PALAKKAD */}
-      <section className="section">
-        <div className="container">
-          <SectionHeading
-            title="Explore Palakkad from our door"
-            text="Our tour desk can help you plan day trips to the places Palakkad is known for."
-          />
-          <div className="grid grid-4">
-            {explore.map((x, i) => (
-              <Reveal key={x.title} delay={i * 100} className="amenity glass">
-                <span className="icon-bubble"><x.icon /></span>
-                <h3>{x.title}</h3>
-                <p>{x.text}</p>
-              </Reveal>
-            ))}
+      {/* EXPLORE PALAKKAD — Must Visit Places */}
+      <section className="section destinations">
+        <div className="container destinations-grid">
+          <div className="dest-intro">
+            <Reveal as="span" className="dest-eyebrow">Our top destinations</Reveal>
+            <AnimatedText text="Must Visit Places" as="h2" className="dest-title" />
+            <Reveal as="p" delay={150}>
+              From serene hills to historic forts, Palakkad offers a perfect blend of nature, culture and
+              heritage. Our tour desk can help you plan day trips.
+            </Reveal>
+            <Reveal delay={250}>
+              <Link to="/contact" className="dest-explore">
+                <span className="dest-explore-btn"><FaArrowRight /></span>
+                Explore the region
+              </Link>
+            </Reveal>
           </div>
+
+          {explore.map((x, i) => (
+            <Reveal key={x.title} delay={i * 120} className="dest-card">
+              <span className="dest-icon"><x.icon /></span>
+              <h3>{x.title}</h3>
+              <p>{x.text}</p>
+              <Link to={x.link} className="dest-more">Know more <FaArrowRight /></Link>
+              <div className={`dest-blob b${i + 1}`}>
+                <img src={x.image} alt={x.title} loading="lazy" />
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
 

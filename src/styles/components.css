@@ -59,7 +59,7 @@
 }
 
 .room-card:hover {
-  border-color: rgba(184, 146, 74, 0.55);
+  border-color: rgba(160, 168, 174, 0.7);
 }
 
 .room-card-media {
@@ -92,7 +92,7 @@
   background: rgba(18, 64, 60, 0.7);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  color: #ead8a4;
+  color: #e4e7ea;
   font-weight: 700;
 }
 
@@ -192,7 +192,7 @@
 .enquiry textarea:focus {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 4px rgba(184, 146, 74, 0.18);
+  box-shadow: 0 0 0 4px rgba(160, 168, 174, 0.28);
 }
 
 .booking-bar .btn {
@@ -245,7 +245,7 @@
 }
 
 .faq-item.open {
-  border-color: rgba(184, 146, 74, 0.55);
+  border-color: rgba(160, 168, 174, 0.7);
   background: var(--glass-bg-strong);
 }
 
@@ -362,7 +362,7 @@
   right: 24px;
   top: 24px;
   font-size: 2rem;
-  color: rgba(184, 146, 74, 0.25);
+  color: rgba(160, 168, 174, 0.4);
 }
 
 .reviewer {

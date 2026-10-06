@@ -53,7 +53,7 @@ export default function Events() {
             </Reveal>
           </div>
           <Reveal variant="right" className="split-media">
-            <img className="single" src={img(photos.wedding, 1100)} alt="Wedding décor" loading="lazy" />
+            <img className="single" src="/assets/party.jpg" alt="Wedding décor" loading="lazy" />
           </Reveal>
         </div>
       </section>
