@@ -155,6 +155,23 @@
   }
 }
 
+
+@media (max-width: 768px) {
+  /* Stop sideways slide-in animations from widening the page */
+  [data-aos="fade-left"],
+  [data-aos="fade-right"],
+  [data-aos="slide-left"],
+  [data-aos="slide-right"],
+  [data-aos="zoom-in-left"],
+  [data-aos="zoom-in-right"] {
+    transform: translate3d(0, 24px, 0) !important;
+  }
+
+  [data-aos].aos-animate {
+    transform: translate3d(0, 0, 0) !important;
+  }
+}
+
 /* ===================== 520px ===================== */
 @media (max-width: 520px) {
   .container {
