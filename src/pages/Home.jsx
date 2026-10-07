@@ -17,6 +17,7 @@ import RoomCard from "../components/RoomCard";
 import Testimonials from "../components/Testimonials";
 import FAQ from "../components/FAQ";
 import CTABanner from "../components/CTABanner";
+import AmenitiesStack from "../components/AmenitiesStack";
 
 export default function Home() {
   return (
@@ -112,26 +113,7 @@ export default function Home() {
       </section>
 
       {/* AMENITIES */}
-      <section className="section section-alt">
-        <div className="container">
-          <SectionHeading
-            title="Everything you need, nothing you don't"
-            text="Thoughtful facilities that make the stay easy from the moment you arrive."
-          />
-          <div className="grid grid-4 amenity-grid">
-            {amenities.slice(0, 8).map((a, i) => (
-              <Reveal key={a.title} delay={(i % 4) * 90} variant="zoom" className="amenity glass">
-                <span className="icon-bubble"><a.icon /></span>
-                <h3>{a.title}</h3>
-                <p>{a.text}</p>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="center-cta">
-            <Link to="/amenities" className="btn btn-glass">All amenities <FaArrowRight /></Link>
-          </Reveal>
-        </div>
-      </section>
+      <AmenitiesStack items={amenities} limit={8} />
 
       {/* EVENTS */}
       <section className="section section-dark events-feature">

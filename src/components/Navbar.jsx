@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { FaBars, FaTimes, FaPhoneAlt, FaHotel } from "react-icons/fa";
+import { FaBars, FaTimes, FaPhoneAlt } from "react-icons/fa";
 import { navLinks, site } from "../data/site";
 
 export default function Navbar() {
@@ -10,7 +10,6 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   const navRef = useRef(null);
-  const progressRef = useRef(null);
 
   /* ---- sliding pill: follows hover/focus, rests on the active page ---- */
   const placePill = useCallback((el) => {
@@ -47,27 +46,12 @@ export default function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  /* ---- scroll state + reading progress hairline ---- */
+  /* ---- compact navbar once the page is scrolled ---- */
   useEffect(() => {
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const y = window.scrollY;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setScrolled(y > 40);
-      if (progressRef.current) {
-        progressRef.current.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
-      }
-    };
-    const onScroll = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    update();
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (raf) cancelAnimationFrame(raf);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   /* ---- lock page scroll while the drawer is open ---- */
@@ -81,9 +65,17 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
       <div className="container navbar-inner">
+        {/* ---------- brand (logo image) ---------- */}
         <Link to="/" className="brand" aria-label={`${site.name} home`}>
           <span className="brand-mark">
-            <FaHotel />
+            <img
+              src="/assets/logo.png"
+              alt=""
+              className="brand-logo"
+              width="48"
+              height="48"
+              decoding="async"
+            />
           </span>
           <span className="brand-text">
             <strong>Hydepark</strong>
@@ -91,6 +83,7 @@ export default function Navbar() {
           </span>
         </Link>
 
+        {/* ---------- centered links ---------- */}
         <nav
           ref={navRef}
           className={`nav-links ${open ? "show" : ""}`}
@@ -121,6 +114,7 @@ export default function Navbar() {
           </a>
         </nav>
 
+        {/* ---------- actions ---------- */}
         <div className="nav-actions">
           <a className="nav-phone" href={`tel:${site.phoneRaw}`}>
             <span className="nav-phone-icon">
@@ -141,8 +135,6 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
-      <span className="nav-progress" ref={progressRef} aria-hidden="true" />
     </header>
   );
 }

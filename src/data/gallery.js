@@ -8,7 +8,7 @@ export const gallery = [
   { id: 3, src: photos.hall, cat: "Events", alt: "Banquet hall set for a reception" },
   { id: 4, src: photos.dining, cat: "Dining", alt: "Restaurant table setting" },
   { id: 5, src: photos.roomSuite, cat: "Rooms", alt: "Suite bedroom" },
-  { id: 6, src: photos.wedding, cat: "Events", alt: "Wedding décor" },
+  { id: 6, src: photos.lobby, cat: "Events", alt: "Wedding décor" },
   { id: 7, src: photos.exterior, cat: "Exterior", alt: "Hotel façade" },
   { id: 8, src: photos.roomTriple, cat: "Rooms", alt: "Triple room beds" },
   { id: 9, src: photos.conference, cat: "Events", alt: "Conference seating" },

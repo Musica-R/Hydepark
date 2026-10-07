@@ -1,68 +1,10 @@
+/* NOTE: all navbar / mobile-menu rules live in navbar.css now.
+   Do not add .nav-*, .navbar-*, .brand-* rules here. */
+
 /* ===================== 1024px ===================== */
 @media (max-width: 1024px) {
-  :root {
-    --nav-h: 72px;
-  }
-
   .container {
     width: min(1200px, 100% - 40px);
-  }
-
-  .nav-toggle {
-    display: grid;
-  }
-
-  .nav-phone,
-  .nav-actions .btn {
-    display: none;
-  }
-
-  .nav-links {
-    position: fixed;
-    inset: 0;
-    padding: 104px 28px 40px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 6px;
-    background: rgba(247, 244, 236, 0.98);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-14px);
-    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease), visibility 0.4s;
-    z-index: -1;
-    overflow-y: auto;
-  }
-
-  .nav-links.show {
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
-  .nav-links a:not(.nav-call-mobile) {
-    font-size: 1.3rem;
-    font-family: var(--font-display);
-    font-weight: 600;
-    padding: 14px 20px;
-    border-radius: 16px;
-  }
-
-  .nav-call-mobile {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    padding: 16px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, #f1f3f4, #a3a9ae);
-    color: #12312e;
-    font-weight: 700;
-  }
-
-  .navbar-inner {
-    position: relative;
-    z-index: 2;
   }
 
   .grid-4 {
@@ -190,11 +132,7 @@
     padding-bottom: 72px;
   }
 
-  .hero-shade {
-    background: linear-gradient(180deg, rgba(247, 244, 236, 0.9) 0%, rgba(247, 244, 236, 0.78) 55%, var(--ivory) 100%);
-  }
-
-  .duo {
+   .duo {
     padding-bottom: 40px;
   }
 
@@ -386,19 +324,6 @@
     font-size: 2.35rem;
   }
 
-  .brand-mark {
-    width: 38px;
-    height: 38px;
-  }
-
-  .brand-text strong {
-    font-size: 1.1rem;
-  }
-
-  .brand-text small {
-    font-size: 0.75rem;
-  }
-
   .btn {
     padding: 13px 18px;
     font-size: 0.92rem;
@@ -436,15 +361,6 @@
 
   .inroom {
     padding: 16px;
-  }
-
-  .nav-links {
-    padding: 96px 16px 30px;
-  }
-
-  .nav-links a:not(.nav-call-mobile) {
-    font-size: 1.12rem;
-    padding: 12px 14px;
   }
 
   .icon-bubble {

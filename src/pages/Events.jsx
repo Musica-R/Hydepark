@@ -6,6 +6,7 @@ import AnimatedText from "../components/AnimatedText";
 import Reveal from "../components/Reveal";
 import EnquiryForm from "../components/EnquiryForm";
 import { FaCheckCircle } from "react-icons/fa";
+import PlanSteps from "../components/PlanSteps";
 
 export default function Events() {
   return (
@@ -73,20 +74,7 @@ export default function Events() {
         </div>
       </section>
 
-      <section className="section section-alt">
-        <div className="container">
-          <SectionHeading title="Planning your event, step by step" text="A simple process from first call to final guest." />
-          <div className="steps">
-            {planSteps.map((s, i) => (
-              <Reveal key={s.title} delay={i * 100} className="step glass">
-                <span className="step-num">{i + 1}</span>
-                <h3>{s.title}</h3>
-                <p>{s.text}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+     <PlanSteps steps={planSteps} />
 
       <section className="section">
         <div className="container split">
